@@ -8,6 +8,7 @@ tags: [deltarecon, release]
 toc: true
 toc_label: "indice"
 toc_icon: "heart"
+toc_sticky: true
 ---
 
 ## objective
