@@ -1,6 +1,10 @@
 ---
 layout: home
 author_profile: true
+title: welcome
+read_time: false
+header:
+  overlay_image: /assets/images/header.jpeg
 ---
 
 ## building stable, secure and scalable systems
