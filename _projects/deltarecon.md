@@ -54,8 +54,8 @@ it's an ecosystem that brings order, intelligence and scalability to a world dom
         {{ post.title }}
       </a>
     </h3>
-    <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date_to_long_string }}</time>
-    <p>{{ post.excerpt }}</p>
+    <time datetime="{{ post.date | date: "%Y-%m-%d" }}"><small>{{ post.date | date_to_long_string }}</small></time>
+    <p><small>{{ post.excerpt }}</small></p>
   </article>
 {% endif %}
 {% endfor %}

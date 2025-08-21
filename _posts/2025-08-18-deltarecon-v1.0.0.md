@@ -2,7 +2,7 @@
 layout: single
 title:  "deltarecon - v1.0.0 haboob"
 excerpt: "autonomous penetration testing meets artificial intelligence"
-date:   2025-08-17 16:01:18 +0200
+date:   2025-08-18 9:00:00 +0200
 categories: deltarecon
 tags: [deltarecon, release]
 toc: true
