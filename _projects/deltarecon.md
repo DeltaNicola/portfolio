@@ -46,17 +46,6 @@ deltarecon instead focuses on three distinctive values:
 **deltarecon** is much more than a recon framework:  
 it's an ecosystem that brings order, intelligence and scalability to a world dominated by isolated tools and manual processes, paving the way for an **automated, intelligent and sustainable** security model
 
-## releases
-{% for post in site.posts %}
-{% if post.tags[0] == "deltarecon" and post.tags[1] == "release" %}
-  <article>
-    <h3>
-      <a href="{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h3>
-    <time datetime="{{ post.date | date: "%Y-%m-%d" }}"><small>{{ post.date | date_to_long_string }}</small></time>
-    <p><small>{{ post.excerpt }}</small></p>
-  </article>
-{% endif %}
-{% endfor %}
+{% include post_displayer.html
+title="releases" 
+tags="deltarecon,release" %}
