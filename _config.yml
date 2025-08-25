@@ -51,12 +51,14 @@ plugins:
   - jekyll-sitemap
 include: 
   - "_pages"
+enable_copy_code_button: true
 
 collections:
   projects:
     output: true
     permalink: /:collection/:path/
-
+  case_study:
+    output: false
 defaults:
   # _pages
   - scope:

@@ -1,0 +1,19 @@
+{% assign results = site.case_study
+  | where: "project", include.project
+  | where: "date_key", include.date
+  | sort: "order" %}
+
+{% if results.size > 0 %}
+  {% for doc in results %}
+  <details class="case-result">
+    <summary><strong>{{ doc.label | default: doc.basename }}</strong></summary>
+    <br />
+    <div class="case-result__content">
+      {{ doc.content | markdownify }}
+    </div>
+  </details>
+  {: .notice--info}
+  {% endfor %}
+{% else %}
+  <p>no results found for project "{{ include.project }}" on "{{ include.date }}".</p>
+{% endif %}
