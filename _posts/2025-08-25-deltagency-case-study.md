@@ -318,6 +318,6 @@ in essence: autogen is conversation-first and favors flexible collaboration; del
 
 *this was honestly quite a journey.*  
 
-*mainly because i had never written something like this before, nor had i run these types of tests with so many different factors in mind.*   
+*mainly because I had never written something like this before, nor had I run these types of tests with so many different factors in mind.*   
 
-*i hope to bring more case studies in the future, as i enrich deltagency with more and more features before releasing it and open-sourcing it.*
+*i hope to bring more case studies in the future, as I enrich deltagency with more and more features before releasing it and open-sourcing it.*
