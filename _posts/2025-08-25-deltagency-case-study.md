@@ -12,6 +12,10 @@ toc_sticky: true
 ---
 the content creation factory showdown
 
+***NOTE:***
+*this page refers to a very early-stage development phase of the framework and it does not reflect its current state or its full capabilities*
+{: .notice--info}
+
 ## overview
 this case study compares a task-first, ollama-native framework (deltagency) with microsoft's autogen under identical conditions.  
 

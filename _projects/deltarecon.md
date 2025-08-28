@@ -46,6 +46,4 @@ deltarecon instead focuses on three distinctive values:
 **deltarecon** is much more than a recon framework:  
 it's an ecosystem that brings order, intelligence and scalability to a world dominated by isolated tools and manual processes, paving the way for an **automated, intelligent and sustainable** security model
 
-{% include post_displayer.html
-title="releases" 
-tags="deltarecon,release" %}
+{% include project_sections.html project_name="deltarecon" %}

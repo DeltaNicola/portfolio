@@ -35,6 +35,7 @@ each layer has a single responsibility, making agents easier to build, debug, an
 - **communication bridge** → direct Ollama API integration
 - **agent executor** → task execution
 - **relay nodes** → composition of workflow made of multiple agents
+- **relay runner** → the control loop that executes the nodes
 
 ### the relay pattern
 
@@ -79,10 +80,4 @@ deltagency is a lightweight, task-first framework for building modular AI agents
 it focuses on deterministic workflows, direct Ollama integration, and minimal dependencies.  
 the goal is simple: remove overhead and give developers predictable, controllable agents.
 
-{% include post_displayer.html
-title="case study" 
-tags="deltagency,casestudy" %}
-
-{% include post_displayer.html
-title="releases" 
-tags="deltagency,release" %}
+{% include project_sections.html project_name="deltagency" %}

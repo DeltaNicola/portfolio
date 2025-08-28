@@ -1,0 +1,24 @@
+{% assign project = include.project_name %}
+{% assign tags_casestudy = project | append: ",casestudy" %}
+{% assign tags_release = project | append: ",release" %}
+{% assign tags_other = project | append: ",other" %}
+
+{% include post_displayer.html
+   title="case studies" 
+   tags=tags_casestudy %}
+
+{% include post_displayer.html
+   title="releases" 
+   tags=tags_release %}
+
+{% include post_displayer.html
+   title="other posts" 
+   tags=tags_other %}
+
+<br/>
+<div class="text-center" style="margin-top: 2rem;">
+  <a href="/posts/{{ project }}/" class="btn btn--primary">
+    more posts about {{ project }}
+  </a>
+</div>
+<br/>
