@@ -1,8 +1,8 @@
 ---
-title: deltagency's archive
+title: deltagentz's archive
 layout: archive
-permalink: /posts/deltagency/
-project: deltagency
+permalink: /posts/deltagentz/
+project: deltagentz
 entries_layout: list
 ---
 {% assign filtered_posts = site.posts | where_exp: "post", "post.tags contains page.project" %}

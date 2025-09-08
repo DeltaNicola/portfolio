@@ -1,5 +1,5 @@
 ---
-project: deltagency
+project: deltagentz
 date_key: 25-08-2025
 label: autogen output
 order: 2

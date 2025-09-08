@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "deltagency"
+title: "deltagentz"
 subtitle: "open-source task-first AI agent framework"
 excerpt: "open-source task-first AI agent framework"
 toc: true
@@ -11,12 +11,12 @@ toc_sticky: true
 
 ## execute, then delegate
 
-while most AI agent frameworks today are conversation-obsessed and production-hostile, **deltagency** cuts through the noise by implementing a task-based, Ollama-native AI agent framework with zero bloat.  
+while most AI agent frameworks today are conversation-obsessed and production-hostile, **deltagentz** cuts through the noise by implementing a task-based, Ollama-native AI agent framework with zero bloat.  
 in contrast to layers of abstractions of other frameworks, the goal is to provide a clean, simple interface to work with and make the workflow as deterministic as possible.
 
 ## vision
 
-deltagency aims to provide:
+deltagentz aims to provide:
 - modular components instead of rigid hierarchies
 - optimization for *input → output* workflows, not endless chat
 - direct Ollama integration with full API control
@@ -25,12 +25,12 @@ deltagency aims to provide:
 
 ## architecture
 
-deltagency is built with a simple but structured approach.  
+deltagentz is built with a simple but structured approach.  
 its architecture combines clean design layers with a flexible relay pattern for orchestration.
 
 ### design layers
 
-the core of deltagency is organized in clear layers.  
+the core of deltagentz is organized in clear layers.  
 each layer has a single responsibility, making agents easier to build, debug, and extend.
 - **communication bridge** → direct Ollama API integration
 - **agent executor** → task execution
@@ -40,7 +40,7 @@ each layer has a single responsibility, making agents easier to build, debug, an
 ### the relay pattern
 
 traditional frameworks mix *execution* with *decision-making*, creating debugging nightmares  
-deltagency introduces the **relay pattern**, which separates concerns:
+deltagentz introduces the **relay pattern**, which separates concerns:
 - **execute** → agent completes its specialized task
 - **delegate** → agent passes results or decides the next step
 - **clean** → context is released, resources freed
@@ -57,7 +57,7 @@ one pattern, infinite workflows
 ## why it’s different
 
 most frameworks optimize for conversations or heavy orchestration.  
-deltagency is different:
+deltagentz is different:
 - **task-focused** → deterministic workflows, predictable outputs
 - **modular** → composable, reusable components
 - **ollama-native** → direct API integration, no wrappers
@@ -66,7 +66,7 @@ deltagency is different:
 
 ## status
 
-deltagency is under active development.  
+deltagentz is under active development.  
 early results:
 - better modularity
 - cleaner configurations
@@ -76,8 +76,8 @@ code will be open-sourced once production stability is reached.
 
 ## in summary
 
-deltagency is a lightweight, task-first framework for building modular AI agents.  
+deltagentz is a lightweight, task-first framework for building modular AI agents.  
 it focuses on deterministic workflows, direct Ollama integration, and minimal dependencies.  
 the goal is simple: remove overhead and give developers predictable, controllable agents.
 
-{% include project_sections.html project_name="deltagency" %}
+{% include project_sections.html project_name="deltagentz" %}

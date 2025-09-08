@@ -1,10 +1,10 @@
 ---
 layout: single
-title:  "case study: deltagency vs autogen"
+title:  "case study: deltagentz vs autogen"
 excerpt: "comparative analysis against autogen AI agents"
 date:   2025-08-25 9:00:00 +0200
-categories: deltagency
-tags: [deltagency, casestudy]
+categories: deltagentz
+tags: [deltagentz, casestudy]
 toc: true
 toc_label: "indice"
 toc_icon: "heart"
@@ -17,9 +17,9 @@ the content creation factory showdown
 {: .notice--info}
 
 ## overview
-this case study compares a task-first, ollama-native framework (deltagency) with microsoft's autogen under identical conditions.  
+this case study compares a task-first, ollama-native framework (deltagentz) with microsoft's autogen under identical conditions.  
 
-deltagency focuses on deterministic, task-based workflows with a lightweight, zero-bloat design and a relay pattern for orchestration, while autogen emphasizes conversational collaboration.  
+deltagentz focuses on deterministic, task-based workflows with a lightweight, zero-bloat design and a relay pattern for orchestration, while autogen emphasizes conversational collaboration.  
 
 the analysis examines code complexity, resource management, execution patterns, and output quality to reveal unexpected insights about framework trade-offs and challenge common assumptions about enterprise versus custom solutions.
 
@@ -33,7 +33,7 @@ the analysis examines code complexity, resource management, execution patterns, 
 - **same infrastructure:** same runpod gpu backend
 
 ### key differences
-- **deltagency:** relay pattern configured as a sequential pipeline for this test (researcher→writer→editor→seo→publisher); the framework also supports consultation loops and routing patterns
+- **deltagentz:** relay pattern configured as a sequential pipeline for this test (researcher→writer→editor→seo→publisher); the framework also supports consultation loops and routing patterns
 - **autogen:** round robin group-chat with max_turns=5
 
 ### agents and task definitions
@@ -49,20 +49,20 @@ the analysis examines code complexity, resource management, execution patterns, 
 ### outputs
 
 the outputs have been copied as-is.
-{% include case_study_results_displayer.html project="deltagency" date="25-08-2025" %}
+{% include case_study_results_displayer.html project="deltagentz" date="25-08-2025" %}
 
 ## architectural comparison
 
 ### implementation
 
-#### deltagency
+#### deltagentz
 ```python
 # agent definition
 researcher = (ExecutorAgent(MODEL, BASE_URL, RESEARCHER, desc)
            .with_system_prompt(RESEARCHER_SYSTEM_PROMPT))
 
 # workflow definition
-deltagency_relayer = (Relayer()
+deltagentz_relayer = (Relayer()
     .add_node(researcher, delegate_to=[writer])
     .add_node(writer, delegate_to=[editor])
     .add_node(editor, delegate_to=[seo_optimizer]) 
@@ -70,7 +70,7 @@ deltagency_relayer = (Relayer()
     .add_node(publisher, unload_after_use=True))
 
 # task execution
-deltagency_relayer.run(TASK)
+deltagentz_relayer.run(TASK)
 ```
 #### autogen
 ```python
@@ -91,7 +91,7 @@ await Console(autogen_chat.run_stream(task=TASK))
 ```
 ### philosophy
 
-#### deltagency
+#### deltagentz
 - **clear separation of concerns** – each agent has one job
 - **controlled context handoff** – agents pass the necessary state/results; relay pattern includes a clean step to release context
 - **unload optimization** – final agent can unload the model to free memory
@@ -103,7 +103,7 @@ await Console(autogen_chat.run_stream(task=TASK))
 - **async-friendly execution** – often run with an event loop for streaming; synchronous paths also exist
 - **distributed decision making** – flow is powerful but less predictable
 
-### why deltagency differs (at a glance)
+### why deltagentz differs (at a glance)
 - task-focused deterministic workflows
 - modular, composable agents
 - ollama-native direct api integration
@@ -116,7 +116,7 @@ await Console(autogen_chat.run_stream(task=TASK))
 
 both frameworks follow the same 5 stages, but with different approaches.
 
-| stage        | deltagency (sequential evolution)                         | autogen (conversational collaboration)         |
+| stage        | deltagentz (sequential evolution)                         | autogen (conversational collaboration)         |
 |--------------|------------------------------------------------------------|-----------------------------------------------|
 | **research** | collects statistics and trends, builds a solid foundation  | produces a comprehensive draft with statistics |
 | **writing**  | expands with challenges, opportunities, and implementation | adds strengths/weaknesses analysis             |
@@ -126,7 +126,7 @@ both frameworks follow the same 5 stages, but with different approaches.
 
 ### execution results 
 
-| aspect              | deltagency                                                  | autogen                                             |
+| aspect              | deltagentz                                                  | autogen                                             |
 |---------------------|-------------------------------------------------------------|-----------------------------------------------------|
 | **style**           | more articulated, like a long-form blog post                | more schematic, concise, and seo-optimized          |
 | **real data**       | yes, includes statistics and concrete case studies          | no, only generic references                         |
@@ -142,53 +142,53 @@ both frameworks follow the same 5 stages, but with different approaches.
 
 ### execution metrics
 
-| metric | deltagency | autogen | winner | margin |
+| metric | deltagentz | autogen | winner | margin |
 |--------|------------|---------|---------|---------|
 | **execution time** | 69.37s | 57.42s | autogen | -17% faster |
 | **words/second** | 12.61 | 17.41 | autogen | +~5 words/second |
 | **total words** | ~875 | ~1000 | autogen | +~12.5% more content |
-| **sections completed** | 9 | 6 | deltagency | +50% more sections |
-| **statistical citations** | 4 specific | 2 generic | deltagency | 2x more data |
+| **sections completed** | 9 | 6 | deltagentz | +50% more sections |
+| **statistical citations** | 4 specific | 2 generic | deltagentz | 2x more data |
 
 ### process characteristics
 
-| aspect | deltagency | autogen | winner | advantage |
+| aspect | deltagentz | autogen | winner | advantage |
 |--------|------------|---------|---------|-----------|
-| **predictability** | deterministic | variable | deltagency | consistent output |
+| **predictability** | deterministic | variable | deltagentz | consistent output |
 | **adaptability** | rigid | flexible | autogen | dynamic adjustment |
-| **debugging ease** | simple | complex | deltagency | linear troubleshooting |
+| **debugging ease** | simple | complex | deltagentz | linear troubleshooting |
 | **human-like process** | mechanical | conversational | autogen | natural collaboration |
-| **scalability** | excellent | moderate | deltagency | easy agent addition |
+| **scalability** | excellent | moderate | deltagentz | easy agent addition |
 | **learning curve** | steep | gentle | autogen | faster onboarding |
 
 ### content quality matrix
 
-| element              | deltagency score        | autogen score          | winner     | notes                        |
+| element              | deltagentz score        | autogen score          | winner     | notes                        |
 |----------------------|-------------------------|------------------------|------------|------------------------------|
-| **depth of research** | very strong             | moderate               | deltagency | concrete stats vs generic    |
-| **professional polish** | highly polished        | basic                  | deltagency | enterprise-ready             |
+| **depth of research** | very strong             | moderate               | deltagentz | concrete stats vs generic    |
+| **professional polish** | highly polished        | basic                  | deltagentz | enterprise-ready             |
 | **readability**      | good but dense          | smooth and accessible  | autogen    | more conversational tone     |
-| **seo optimization** | advanced and precise    | limited                | deltagency | calculated precision         |
-| **practical examples** | rich and quantified    | scarce and abstract    | deltagency | quantified case studies      |
-| **engagement factors** | strong (cta + faq + social) | moderate (suggestions only) | deltagency | complete engagement features |
+| **seo optimization** | advanced and precise    | limited                | deltagentz | calculated precision         |
+| **practical examples** | rich and quantified    | scarce and abstract    | deltagentz | quantified case studies      |
+| **engagement factors** | strong (cta + faq + social) | moderate (suggestions only) | deltagentz | complete engagement features |
 
 ### workflow efficiency 
 
-| process aspect | deltagency | autogen | winner | reasoning |
+| process aspect | deltagentz | autogen | winner | reasoning |
 |----------------|------------|---------|---------|-----------|
-| **setup complexity** | minimal | moderate | deltagency | env vars vs complex config |
-| **configuration effort** | low | high | deltagency | system prompts vs framework setup |
-| **maintenance overhead** | very low | moderate | deltagency | simple codebase vs framework updates |
-| **quality consistency** | excellent | variable | deltagency | deterministic pipeline |
-| **customization flexibility** | excellent | limited | deltagency | direct prompt control |
+| **setup complexity** | minimal | moderate | deltagentz | env vars vs complex config |
+| **configuration effort** | low | high | deltagentz | system prompts vs framework setup |
+| **maintenance overhead** | very low | moderate | deltagentz | simple codebase vs framework updates |
+| **quality consistency** | excellent | variable | deltagentz | deterministic pipeline |
+| **customization flexibility** | excellent | limited | deltagentz | direct prompt control |
 | **team collaboration** | individual | group | autogen | natural peer review |
-| **cost efficiency** | free | expensive | deltagency | local models vs api costs |
+| **cost efficiency** | free | expensive | deltagentz | local models vs api costs |
 
 ## limitations
 
 ### disclaimer
 
-it is important to note that deltagency is still in a super beta stage.  
+it is important to note that deltagentz is still in a super beta stage.  
 
 this means the results presented here should be read as exploratory and not as definitive benchmarks. several factors limit the generalizability of the comparison:
 
@@ -211,17 +211,17 @@ autogen shows clear strengths in several areas that are worth acknowledging:
 
 ### setup complexity comparison
 
-| aspect | deltagency | autogen (ref impl.)  | winner | reality |
+| aspect | deltagentz | autogen (ref impl.)  | winner | reality |
 |--------|----------------------|--------------------------|--------|---------|
 | configuration | model and base url passed in code | model and base url passed in code | draw | both can read from env or constants |
 | code required | compact pipeline: executoragent + relayer + run | compact pipeline: client + agents + groupchat + run | draw | similar amount of code |
-| dependency management | deltagency runtime + model backend | autogen runtime + model backend | draw | both need a client lib and an ollama-compatible backend |
+| dependency management | deltagentz runtime + model backend | autogen runtime + model backend | draw | both need a client lib and an ollama-compatible backend |
 | deployment complexity | needs a reachable model backend | needs a reachable model backend | draw | identical requirement at this level |
 | customization effort | edit per-node system prompts | edit per-agent system messages | draw | prompt-first customization on both |
-| debugging difficulty | linear node chain via relayer | intertwined group chat turns | deltagency | easier causal tracing from node to node |
+| debugging difficulty | linear node chain via relayer | intertwined group chat turns | deltagentz | easier causal tracing from node to node |
 | context handling | full history forwarded downstream | shared conversation state across agents | draw | different mechanisms, comparable effect |
-| resource control | explicit `unload_after_use` on final node | managed by framework runtime | deltagency | explicit release hint present |
-| async requirements | not required | event loop and streaming console | deltagency | fewer runtime prerequisites |
+| resource control | explicit `unload_after_use` on final node | managed by framework runtime | deltagentz | explicit release hint present |
+| async requirements | not required | event loop and streaming console | deltagentz | fewer runtime prerequisites |
 
 ## discussion
 
@@ -230,29 +230,29 @@ autogen shows clear strengths in several areas that are worth acknowledging:
 the comparison highlights two distinct philosophies with clear trade-offs:
 
 - **output style**  
-  - deltagency: long-form, structured, data-rich, enterprise-like  
+  - deltagentz: long-form, structured, data-rich, enterprise-like  
   - autogen: shorter, smoother, more conversational and more readable 
 
 - **workflow behavior**  
-  - deltagency: sequential, deterministic, easy to trace  
+  - deltagentz: sequential, deterministic, easy to trace  
   - autogen: iterative, collaborative, harder to predict  
 
 - **strengths**  
-  - deltagency: depth, concrete examples, stronger seo structure  
+  - deltagentz: depth, concrete examples, stronger seo structure  
   - autogen: readability, speed, natural peer-like review  
 
 - **weaknesses**  
-  - deltagency: rigid when configured as a strict sequential pipeline; consultation loops were not enabled in this test 
+  - deltagentz: rigid when configured as a strict sequential pipeline; consultation loops were not enabled in this test 
   - autogen: shallow on data, fewer concrete case studies  
 
 - **best fit use cases**  
-  - deltagency: reference articles, pillar content, enterprise documentation  
+  - deltagentz: reference articles, pillar content, enterprise documentation  
   - autogen: brainstorming drafts, seo blogs, fast social content  
 
 ### qualitative analysis
-overall, deltagency aligns with a production-first task-based mindset, while autogen reflects a creative and exploratory approach. the choice depends less on raw performance and more on the intended content type and context of use.
+overall, deltagentz aligns with a production-first task-based mindset, while autogen reflects a creative and exploratory approach. the choice depends less on raw performance and more on the intended content type and context of use.
 
-#### deltagency vertical specialization
+#### deltagentz vertical specialization
 **pros:**  
 - each agent maintains specific expertise  
 - incremental quality output  
@@ -282,19 +282,19 @@ overall, deltagency aligns with a production-first task-based mindset, while aut
 after running both frameworks side by side, a few personal takeaways stood out:
 
 - **surprises**  
-  - as expected, autogen produced more volume, but deltagency generated richer content  
-  - the relay pattern in deltagency felt more predictable than anticipated, close to a production pipeline   
+  - as expected, autogen produced more volume, but deltagentz generated richer content  
+  - the relay pattern in deltagentz felt more predictable than anticipated, close to a production pipeline   
 
 - **frustrations**  
   - overall it is kinda impossible to not notice how quick it is to plug & play autogen once you know your way around it  
-  - with the strict sequential configuration used here, deltagency left little room for agents to challenge earlier steps  
+  - with the strict sequential configuration used here, deltagentz left little room for agents to challenge earlier steps  
 
 - **satisfactions**  
-  - seeing deltagency deliver professional, publication-ready structure in a beta stage was encouraging  
+  - seeing deltagentz deliver professional, publication-ready structure in a beta stage was encouraging  
   - autogen’s conversational dynamics yielded drafts that needed minimal copy editing  
 
 - **future tests**  
-  - enable consultation loops and routing in deltagency to test adaptability  
+  - enable consultation loops and routing in deltagentz to test adaptability  
   - profile resource usage and latency across longer documents and different models  
   - evaluate hybrid pipelines that inject targeted peer-review stages  
   - replicate the experiment across multiple topics and audiences to check generalizability  
@@ -302,7 +302,7 @@ after running both frameworks side by side, a few personal takeaways stood out:
 these reflections underline that the experiment was less about finding a winner and more about understanding how different philosophies of agent collaboration shape the final result
 
 ## conclusion
-- **deltagency**  
+- **deltagentz**  
   - task-based with strict role separation  
   - deterministic flow ensures traceability and consistent quality  
   - best fit for structured tasks, long-form content, and enterprise use  
@@ -314,7 +314,7 @@ these reflections underline that the experiment was less about finding a winner 
   - best fit for brainstorming, quick drafts, and exploratory work  
   - excels when adaptability matters more than precision  
 
-in essence: autogen is conversation-first and favors flexible collaboration; deltagency is task-first and relay-driven, favoring controlled execution with predictable outcomes.
+in essence: autogen is conversation-first and favors flexible collaboration; deltagentz is task-first and relay-driven, favoring controlled execution with predictable outcomes.
 
 <br/>
 ---
@@ -324,4 +324,4 @@ in essence: autogen is conversation-first and favors flexible collaboration; del
 
 *mainly because I had never written something like this before, nor had I run these types of tests with so many different factors in mind.*   
 
-*i hope to bring more case studies in the future, as I enrich deltagency with more and more features before releasing it and open-sourcing it.*
+*i hope to bring more case studies in the future, as I enrich deltagentz with more and more features before releasing it and open-sourcing it.*

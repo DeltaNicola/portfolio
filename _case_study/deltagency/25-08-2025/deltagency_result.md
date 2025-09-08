@@ -1,7 +1,7 @@
 ---
-project: deltagency
+project: deltagentz
 date_key: 25-08-2025
-label: deltagency output
+label: deltagentz output
 order: 1
 ---
 **Revolutionizing Small Businesses: The Latest AI Automation Trends to Watch**
