@@ -29,7 +29,8 @@ concurrency:
 jobs:
   # Build job
   build:
-    runs-on: ubuntu-latest
+    # pinned: setup-ruby SHA below predates ubuntu-26.04 (ubuntu-latest) and treats it as self-hosted
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
